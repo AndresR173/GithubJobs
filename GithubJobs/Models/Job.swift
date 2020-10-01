@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Job: Codable, Identifiable {
+struct Job: Codable, Identifiable, Equatable {
     let id: String
     let type: String
     let url: String

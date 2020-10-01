@@ -16,6 +16,8 @@
 		BA18B85B25262B9100D8BBEE /* Job.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA18B85A25262B9100D8BBEE /* Job.swift */; };
 		BA18B86725262D2800D8BBEE /* JobsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA18B86625262D2800D8BBEE /* JobsViewModel.swift */; };
 		BA18B86F25262DC900D8BBEE /* JobsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA18B86E25262DC900D8BBEE /* JobsService.swift */; };
+		BA18B8932526368C00D8BBEE /* ServiceProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA18B8922526368C00D8BBEE /* ServiceProvider.swift */; };
+		BA18B899252636B600D8BBEE /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA18B898252636B600D8BBEE /* Constants.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,6 +54,8 @@
 		BA18B86625262D2800D8BBEE /* JobsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobsViewModel.swift; sourceTree = "<group>"; };
 		BA18B86E25262DC900D8BBEE /* JobsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobsService.swift; sourceTree = "<group>"; };
 		BA18B87C25262EB300D8BBEE /* GithubJobs.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = GithubJobs.entitlements; sourceTree = "<group>"; };
+		BA18B8922526368C00D8BBEE /* ServiceProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceProvider.swift; sourceTree = "<group>"; };
+		BA18B898252636B600D8BBEE /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,13 +106,14 @@
 		BA18B8272526287F00D8BBEE /* GithubJobs */ = {
 			isa = PBXGroup;
 			children = (
-				BA18B87C25262EB300D8BBEE /* GithubJobs.entitlements */,
 				BA18B86525262CD200D8BBEE /* App */,
-				BA18B86425262CC700D8BBEE /* Service */,
-				BA18B86325262CC100D8BBEE /* ViewModels */,
-				BA18B86225262CB700D8BBEE /* Views */,
+				BA18B87C25262EB300D8BBEE /* GithubJobs.entitlements */,
 				BA18B85925262B6000D8BBEE /* Models */,
 				BA18B82E2526288100D8BBEE /* Preview Content */,
+				BA18B86425262CC700D8BBEE /* Service */,
+				BA18B897252636A800D8BBEE /* Utils */,
+				BA18B86325262CC100D8BBEE /* ViewModels */,
+				BA18B86225262CB700D8BBEE /* Views */,
 			);
 			path = GithubJobs;
 			sourceTree = "<group>";
@@ -167,6 +172,7 @@
 			isa = PBXGroup;
 			children = (
 				BA18B86E25262DC900D8BBEE /* JobsService.swift */,
+				BA18B8922526368C00D8BBEE /* ServiceProvider.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -179,6 +185,14 @@
 				BA18B8312526288100D8BBEE /* Info.plist */,
 			);
 			path = App;
+			sourceTree = "<group>";
+		};
+		BA18B897252636A800D8BBEE /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				BA18B898252636B600D8BBEE /* Constants.swift */,
+			);
+			path = Utils;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -310,9 +324,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BA18B8932526368C00D8BBEE /* ServiceProvider.swift in Sources */,
 				BA18B82B2526287F00D8BBEE /* ContentView.swift in Sources */,
 				BA18B85B25262B9100D8BBEE /* Job.swift in Sources */,
 				BA18B86725262D2800D8BBEE /* JobsViewModel.swift in Sources */,
+				BA18B899252636B600D8BBEE /* Constants.swift in Sources */,
 				BA18B8292526287F00D8BBEE /* GithubJobsApp.swift in Sources */,
 				BA18B86F25262DC900D8BBEE /* JobsService.swift in Sources */,
 			);
