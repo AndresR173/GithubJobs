@@ -9,11 +9,15 @@ import Foundation
 
 struct Constants {
     struct Api {
-        static let host = "jobs.github.com/"
+        static let host = "https://jobs.github.com"
         static let scheme = "https"
 
-        struct Paths {
-            static let positions = "positions.json"
+        static func getBaseURLComponents() -> URLComponents {
+            var components = URLComponents()
+            components.scheme = Constants.Api.scheme
+            components.host = Constants.Api.host
+
+            return components
         }
     }
 }

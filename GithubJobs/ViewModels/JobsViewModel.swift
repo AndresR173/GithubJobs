@@ -14,9 +14,12 @@ protocol JobsViewModelProtocol {
 }
 
 final class JobsViewModel: ObservableObject {
+
     // MARK: - Properties
+
     @Published var jobs = [Job]()
     let service: JobsServiceProtocol
+    private var cancellables = Set<AnyCancellable>()
 
     // MARK: - Initializer
 
@@ -29,6 +32,15 @@ final class JobsViewModel: ObservableObject {
 
 extension JobsViewModel: JobsViewModelProtocol {
     func searchJobsFor(_ position: String, in location: String? = nil) {
+        service.searchJobsFor(position: position, in: location)
+            .mapError { error -> Error in
+                print(error)
+                return error
+            }
+            .sink(receiveCompletion: { _ in },
+                  receiveValue: { jobs in
 
+                  }
+            ).store(in: &cancellables)
     }
 }
