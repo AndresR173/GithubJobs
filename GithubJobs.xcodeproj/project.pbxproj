@@ -474,7 +474,7 @@
 				CODE_SIGN_ENTITLEMENTS = GithubJobs/GithubJobs.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"GithubJobs/Preview Content\"";
-				DEVELOPMENT_TEAM = KL5CTQ2N5S;
+				DEVELOPMENT_TEAM = 296QZ233WT;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = GithubJobs/App/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
@@ -498,7 +498,7 @@
 				CODE_SIGN_ENTITLEMENTS = GithubJobs/GithubJobs.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"GithubJobs/Preview Content\"";
-				DEVELOPMENT_TEAM = KL5CTQ2N5S;
+				DEVELOPMENT_TEAM = 296QZ233WT;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = GithubJobs/App/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;

@@ -10,9 +10,25 @@ import Combine
 
 protocol JobsViewModelProtocol {
     var jobs: [Job] { get }
-    func searchJobs(for position: String, in location: String?)
+    func searchJobsFor(_ position: String, in location: String?)
 }
 
 final class JobsViewModel: ObservableObject {
+    // MARK: - Properties
+    @Published var jobs = [Job]()
+    let service: JobsServiceProtocol
 
+    // MARK: - Initializer
+
+    init(_ service: JobsServiceProtocol) {
+        self.service = service
+    }
+}
+
+// MARK: - Protocol Implementation [JobsVieModelProtocol]
+
+extension JobsViewModel: JobsViewModelProtocol {
+    func searchJobsFor(_ position: String, in location: String? = nil) {
+
+    }
 }
