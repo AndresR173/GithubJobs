@@ -13,6 +13,9 @@
 		BA18B8302526288100D8BBEE /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BA18B82F2526288100D8BBEE /* Preview Assets.xcassets */; };
 		BA18B83B2526288100D8BBEE /* GithubJobsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA18B83A2526288100D8BBEE /* GithubJobsTests.swift */; };
 		BA18B8462526288100D8BBEE /* GithubJobsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA18B8452526288100D8BBEE /* GithubJobsUITests.swift */; };
+		BA18B85B25262B9100D8BBEE /* Job.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA18B85A25262B9100D8BBEE /* Job.swift */; };
+		BA18B86725262D2800D8BBEE /* JobsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA18B86625262D2800D8BBEE /* JobsViewModel.swift */; };
+		BA18B86F25262DC900D8BBEE /* JobsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA18B86E25262DC900D8BBEE /* JobsService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,6 +48,10 @@
 		BA18B8412526288100D8BBEE /* GithubJobsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GithubJobsUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		BA18B8452526288100D8BBEE /* GithubJobsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GithubJobsUITests.swift; sourceTree = "<group>"; };
 		BA18B8472526288100D8BBEE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BA18B85A25262B9100D8BBEE /* Job.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Job.swift; sourceTree = "<group>"; };
+		BA18B86625262D2800D8BBEE /* JobsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobsViewModel.swift; sourceTree = "<group>"; };
+		BA18B86E25262DC900D8BBEE /* JobsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobsService.swift; sourceTree = "<group>"; };
+		BA18B87C25262EB300D8BBEE /* GithubJobs.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = GithubJobs.entitlements; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,10 +102,12 @@
 		BA18B8272526287F00D8BBEE /* GithubJobs */ = {
 			isa = PBXGroup;
 			children = (
-				BA18B8282526287F00D8BBEE /* GithubJobsApp.swift */,
-				BA18B82A2526287F00D8BBEE /* ContentView.swift */,
-				BA18B82C2526288100D8BBEE /* Assets.xcassets */,
-				BA18B8312526288100D8BBEE /* Info.plist */,
+				BA18B87C25262EB300D8BBEE /* GithubJobs.entitlements */,
+				BA18B86525262CD200D8BBEE /* App */,
+				BA18B86425262CC700D8BBEE /* Service */,
+				BA18B86325262CC100D8BBEE /* ViewModels */,
+				BA18B86225262CB700D8BBEE /* Views */,
+				BA18B85925262B6000D8BBEE /* Models */,
 				BA18B82E2526288100D8BBEE /* Preview Content */,
 			);
 			path = GithubJobs;
@@ -128,6 +137,48 @@
 				BA18B8472526288100D8BBEE /* Info.plist */,
 			);
 			path = GithubJobsUITests;
+			sourceTree = "<group>";
+		};
+		BA18B85925262B6000D8BBEE /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				BA18B85A25262B9100D8BBEE /* Job.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		BA18B86225262CB700D8BBEE /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				BA18B82A2526287F00D8BBEE /* ContentView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		BA18B86325262CC100D8BBEE /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				BA18B86625262D2800D8BBEE /* JobsViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		BA18B86425262CC700D8BBEE /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				BA18B86E25262DC900D8BBEE /* JobsService.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		BA18B86525262CD200D8BBEE /* App */ = {
+			isa = PBXGroup;
+			children = (
+				BA18B8282526287F00D8BBEE /* GithubJobsApp.swift */,
+				BA18B82C2526288100D8BBEE /* Assets.xcassets */,
+				BA18B8312526288100D8BBEE /* Info.plist */,
+			);
+			path = App;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -260,7 +311,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				BA18B82B2526287F00D8BBEE /* ContentView.swift in Sources */,
+				BA18B85B25262B9100D8BBEE /* Job.swift in Sources */,
+				BA18B86725262D2800D8BBEE /* JobsViewModel.swift in Sources */,
 				BA18B8292526287F00D8BBEE /* GithubJobsApp.swift in Sources */,
+				BA18B86F25262DC900D8BBEE /* JobsService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -417,18 +471,20 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = GithubJobs/GithubJobs.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"GithubJobs/Preview Content\"";
 				DEVELOPMENT_TEAM = KL5CTQ2N5S;
 				ENABLE_PREVIEWS = YES;
-				INFOPLIST_FILE = GithubJobs/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				INFOPLIST_FILE = GithubJobs/App/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.andresrojas.GithubJobs;
+				PRODUCT_BUNDLE_IDENTIFIER = com.andresrojas.githubjobs;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTS_MACCATALYST = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -439,18 +495,20 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = GithubJobs/GithubJobs.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"GithubJobs/Preview Content\"";
 				DEVELOPMENT_TEAM = KL5CTQ2N5S;
 				ENABLE_PREVIEWS = YES;
-				INFOPLIST_FILE = GithubJobs/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				INFOPLIST_FILE = GithubJobs/App/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.andresrojas.GithubJobs;
+				PRODUCT_BUNDLE_IDENTIFIER = com.andresrojas.githubjobs;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTS_MACCATALYST = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
