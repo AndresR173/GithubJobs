@@ -10,7 +10,7 @@ import Combine
 import SwiftUI
 
 enum SearchStatus {
-    case initial, loading, loaded
+    case initial, loading, loaded, empty
 }
 
 protocol JobsViewModelProtocol: ObservableObject {
@@ -42,13 +42,14 @@ extension JobsViewModel: JobsViewModelProtocol {
     func searchJobsFor(_ position: String, in location: String? = nil) {
         status = .loading
         service.searchJobsFor(position: position, in: location)
-            .mapError { error -> Error in
-                print(error)
+            .mapError { [weak self] error -> Error in
+                self?.status = .empty
                 return error
             }
             .sink(receiveCompletion: { _ in },
-                  receiveValue: { jobs in
-
+                  receiveValue: { [weak self] jobs in
+                    self?.jobs = jobs
+                    self?.status = jobs.isEmpty ? .empty : .loaded
                   }
             ).store(in: &cancellables)
     }

@@ -10,7 +10,7 @@ import SwiftUI
 
 struct Constants {
     struct Api {
-        static let host = "https://jobs.github.com"
+        static let host = "jobs.github.com"
         static let scheme = "https"
 
         static func getBaseURLComponents() -> URLComponents {

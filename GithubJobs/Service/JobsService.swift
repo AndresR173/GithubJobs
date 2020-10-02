@@ -14,11 +14,12 @@ protocol JobsServiceProtocol {
 
 final class JobsService {
     private let apiClient = APIClient()
+    private let path = "/positions.json"
 
     private func requestJobSearch(position: String, location: String?) -> AnyPublisher<[Job], Error> {
         var urlComponents = Constants.Api.getBaseURLComponents()
-        urlComponents.path = "positions.json"
-        var queryItems = [URLQueryItem(name: "description", value: "position")]
+        urlComponents.path = path
+        var queryItems = [URLQueryItem(name: "description", value: position)]
         if let location = location {
             queryItems.append(URLQueryItem(name: "location", value: location))
         }

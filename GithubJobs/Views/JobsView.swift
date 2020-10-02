@@ -24,7 +24,7 @@ struct JobsView<Model>: View where Model: JobsViewModelProtocol {
                                 .foregroundColor(Color("SearchItemColor"))
                                 .padding(.horizontal, 10)
                             TextField("Enter your position", text: $position)
-                                .foregroundColor(Color("AccentColor"))
+                                .foregroundColor(Color("TextColor"))
 
                         }
                         .frame(maxHeight: 50)
@@ -56,14 +56,17 @@ struct JobsView<Model>: View where Model: JobsViewModelProtocol {
         case .initial:
             return AnyView(EmptyState(message: "Please enter a search criteria"))
         case .loaded:
+            return AnyView(Spacer())
+        case .loading:
+            return AnyView(
+                VStack {
+                    Spacer()
+                    LottieView(name: "searching")
+                        .frame(width:300, height:300)
+                    Spacer()
+                })
+        case .empty:
             return AnyView(EmptyState(message: "There are no results for the search criteria"))
-        default:
-            return AnyView(VStack {
-                Spacer()
-                LottieView(name: "searching")
-                    .frame(width:300, height:300)
-                Spacer()
-            })
         }
     }
 }
