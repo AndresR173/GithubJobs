@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -18,6 +18,12 @@
 		BA18B86F25262DC900D8BBEE /* JobsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA18B86E25262DC900D8BBEE /* JobsService.swift */; };
 		BA18B899252636B600D8BBEE /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA18B898252636B600D8BBEE /* Constants.swift */; };
 		BA18B8A72526493F00D8BBEE /* ApiClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA18B8A62526493F00D8BBEE /* ApiClient.swift */; };
+		BA18B8B825268BCF00D8BBEE /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = BA18B8B725268BCF00D8BBEE /* Lottie */; };
+		BA18B8BE25268BFF00D8BBEE /* SDWebImageSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = BA18B8BD25268BFF00D8BBEE /* SDWebImageSwiftUI */; };
+		BA18B8C625268CA400D8BBEE /* empty_state.json in Resources */ = {isa = PBXBuildFile; fileRef = BA18B8C425268CA400D8BBEE /* empty_state.json */; };
+		BA18B8C725268CA400D8BBEE /* searching.json in Resources */ = {isa = PBXBuildFile; fileRef = BA18B8C525268CA400D8BBEE /* searching.json */; };
+		BA18B8CC25268DD300D8BBEE /* LottieView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA18B8CB25268DD300D8BBEE /* LottieView.swift */; };
+		BA18B8D12526966500D8BBEE /* EmptyState.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA18B8D02526966500D8BBEE /* EmptyState.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,6 +62,10 @@
 		BA18B87C25262EB300D8BBEE /* GithubJobs.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = GithubJobs.entitlements; sourceTree = "<group>"; };
 		BA18B898252636B600D8BBEE /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		BA18B8A62526493F00D8BBEE /* ApiClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiClient.swift; sourceTree = "<group>"; };
+		BA18B8C425268CA400D8BBEE /* empty_state.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = empty_state.json; sourceTree = "<group>"; };
+		BA18B8C525268CA400D8BBEE /* searching.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = searching.json; sourceTree = "<group>"; };
+		BA18B8CB25268DD300D8BBEE /* LottieView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LottieView.swift; sourceTree = "<group>"; };
+		BA18B8D02526966500D8BBEE /* EmptyState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyState.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +73,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BA18B8BE25268BFF00D8BBEE /* SDWebImageSwiftUI in Frameworks */,
+				BA18B8B825268BCF00D8BBEE /* Lottie in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -156,6 +168,8 @@
 			isa = PBXGroup;
 			children = (
 				BA18B82A2526287F00D8BBEE /* JobsView.swift */,
+				BA18B8CB25268DD300D8BBEE /* LottieView.swift */,
+				BA18B8D02526966500D8BBEE /* EmptyState.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -190,9 +204,19 @@
 		BA18B897252636A800D8BBEE /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				BA18B8C325268C8B00D8BBEE /* Animations */,
 				BA18B898252636B600D8BBEE /* Constants.swift */,
 			);
 			path = Utils;
+			sourceTree = "<group>";
+		};
+		BA18B8C325268C8B00D8BBEE /* Animations */ = {
+			isa = PBXGroup;
+			children = (
+				BA18B8C425268CA400D8BBEE /* empty_state.json */,
+				BA18B8C525268CA400D8BBEE /* searching.json */,
+			);
+			path = Animations;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -211,6 +235,10 @@
 			dependencies = (
 			);
 			name = GithubJobs;
+			packageProductDependencies = (
+				BA18B8B725268BCF00D8BBEE /* Lottie */,
+				BA18B8BD25268BFF00D8BBEE /* SDWebImageSwiftUI */,
+			);
 			productName = GithubJobs;
 			productReference = BA18B8252526287F00D8BBEE /* GithubJobs.app */;
 			productType = "com.apple.product-type.application";
@@ -282,6 +310,10 @@
 				Base,
 			);
 			mainGroup = BA18B81C2526287F00D8BBEE;
+			packageReferences = (
+				BA18B8B625268BCF00D8BBEE /* XCRemoteSwiftPackageReference "lottie-ios" */,
+				BA18B8BC25268BFF00D8BBEE /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */,
+			);
 			productRefGroup = BA18B8262526287F00D8BBEE /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -300,6 +332,8 @@
 			files = (
 				BA18B8302526288100D8BBEE /* Preview Assets.xcassets in Resources */,
 				BA18B82D2526288100D8BBEE /* Assets.xcassets in Resources */,
+				BA18B8C725268CA400D8BBEE /* searching.json in Resources */,
+				BA18B8C625268CA400D8BBEE /* empty_state.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -330,7 +364,9 @@
 				BA18B86725262D2800D8BBEE /* JobsViewModel.swift in Sources */,
 				BA18B899252636B600D8BBEE /* Constants.swift in Sources */,
 				BA18B8292526287F00D8BBEE /* GithubJobsApp.swift in Sources */,
+				BA18B8D12526966500D8BBEE /* EmptyState.swift in Sources */,
 				BA18B86F25262DC900D8BBEE /* JobsService.swift in Sources */,
+				BA18B8CC25268DD300D8BBEE /* LottieView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -654,6 +690,38 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		BA18B8B625268BCF00D8BBEE /* XCRemoteSwiftPackageReference "lottie-ios" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/airbnb/lottie-ios";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 3.1.8;
+			};
+		};
+		BA18B8BC25268BFF00D8BBEE /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SDWebImage/SDWebImageSwiftUI.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.5.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		BA18B8B725268BCF00D8BBEE /* Lottie */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = BA18B8B625268BCF00D8BBEE /* XCRemoteSwiftPackageReference "lottie-ios" */;
+			productName = Lottie;
+		};
+		BA18B8BD25268BFF00D8BBEE /* SDWebImageSwiftUI */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = BA18B8BC25268BFF00D8BBEE /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */;
+			productName = SDWebImageSwiftUI;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = BA18B81D2526287F00D8BBEE /* Project object */;
 }

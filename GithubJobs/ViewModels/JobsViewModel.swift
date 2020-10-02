@@ -7,23 +7,31 @@
 
 import Foundation
 import Combine
+import SwiftUI
 
-protocol JobsViewModelProtocol {
+enum SearchStatus {
+    case initial, loading, loaded
+}
+
+protocol JobsViewModelProtocol: ObservableObject {
     var jobs: [Job] { get }
+    var status: SearchStatus { get }
     func searchJobsFor(_ position: String, in location: String?)
 }
 
-final class JobsViewModel: ObservableObject {
+final class JobsViewModel {
 
     // MARK: - Properties
 
     @Published var jobs = [Job]()
+    @Published var status: SearchStatus = .initial
+    
     let service: JobsServiceProtocol
     private var cancellables = Set<AnyCancellable>()
 
     // MARK: - Initializer
 
-    init(_ service: JobsServiceProtocol) {
+    init(service: JobsServiceProtocol) {
         self.service = service
     }
 }
@@ -32,6 +40,7 @@ final class JobsViewModel: ObservableObject {
 
 extension JobsViewModel: JobsViewModelProtocol {
     func searchJobsFor(_ position: String, in location: String? = nil) {
+        status = .loading
         service.searchJobsFor(position: position, in: location)
             .mapError { error -> Error in
                 print(error)
@@ -42,5 +51,11 @@ extension JobsViewModel: JobsViewModelProtocol {
 
                   }
             ).store(in: &cancellables)
+    }
+}
+
+extension JobsViewModelProtocol {
+    func searchJobsFor( _ position: String, in location: String? = nil) {
+        return searchJobsFor(position, in: location)
     }
 }
